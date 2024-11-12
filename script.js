@@ -422,43 +422,43 @@ function addoldData(index) {
     addstudentContent.style.display = "block";
     // oldstudentarr.splice(index, 1)[0];
 
-    document.querySelector("#update").onclick = function () {
-        if (validationform() == true) {
-            studentlist[index].firstname = document.getElementById("firstname").value;
-            studentlist[index].lastname = document.getElementById("lastname").value;
-            studentlist[index].age = document.getElementById("age").value;
-            studentlist[index].phnumber = document.getElementById("phnumber").value;
-            studentlist[index].location = document.getElementById("location").value;
-            studentlist[index].mail = document.getElementById("mail").value;
+    // document.querySelector("#update").onclick = function () {
+    //     if (validationform() == true) {
+    //         studentlist[index].firstname = document.getElementById("firstname").value;
+    //         studentlist[index].lastname = document.getElementById("lastname").value;
+    //         studentlist[index].age = document.getElementById("age").value;
+    //         studentlist[index].phnumber = document.getElementById("phnumber").value;
+    //         studentlist[index].location = document.getElementById("location").value;
+    //         studentlist[index].mail = document.getElementById("mail").value;
 
-            localStorage.setItem("studentlist", JSON.stringify(studentlist));
-            showData();
+    //         localStorage.setItem("studentlist", JSON.stringify(studentlist));
+    //         showData();
 
-            document.getElementById("firstname").value = "";
-            document.getElementById("lastname").value = "";
-            document.getElementById("age").value = "";
-            document.getElementById("phnumber").value = "";
-            document.getElementById("location").value = "";
-            document.getElementById("mail").value = "";
+    //         document.getElementById("firstname").value = "";
+    //         document.getElementById("lastname").value = "";
+    //         document.getElementById("age").value = "";
+    //         document.getElementById("phnumber").value = "";
+    //         document.getElementById("location").value = "";
+    //         document.getElementById("mail").value = "";
 
-            document.getElementById("submit").style.display = "block";
-            document.getElementById("update").style.display = "none";
+    //         document.getElementById("submit").style.display = "block";
+    //         document.getElementById("update").style.display = "none";
 
-            // update and return to currrent student
+    //         // update and return to currrent student
 
-            var currentclassContent = document.querySelector(".currentclasscontent");
-            var addstudentContent = document.querySelector(".contents");
-            var deletedstudentContent = document.querySelector(".oldstudentcontent");
-            deletedstudentContent.style.display = "none";
+    //         var currentclassContent = document.querySelector(".currentclasscontent");
+    //         var addstudentContent = document.querySelector(".contents");
+    //         var deletedstudentContent = document.querySelector(".oldstudentcontent");
+    //         deletedstudentContent.style.display = "none";
 
-            // firststandardContent.style.display = "block";
-            currentclassContent.style.display = "block";
-            addstudentContent.style.display = "none";
+    //         // firststandardContent.style.display = "block";
+    //         currentclassContent.style.display = "block";
+    //         addstudentContent.style.display = "none";
 
 
 
-        }
-    }
+    //     }
+    // }
 
 }
 
@@ -467,6 +467,21 @@ function logout() {
 }
 
 
+function searchStudent() {
+    const searchValue = document.querySelector('.inputcontent1').value;
+    const rows = document.querySelectorAll('#datatable tbody tr');
+    rows.forEach(row => {
+        const name = row.cells[3].innerText;
+        row.style.display = name.includes(searchValue) ? '' : 'none';
+    });
+}
 
-
+function searcholdStudent() {
+    const searchValue = document.querySelector('.inputcontent2').value;
+    const rows = document.querySelectorAll('#deleteddatatable tbody tr');
+    rows.forEach(row => {
+        const name = row.cells[3].innerText;
+        row.style.display = name.includes(searchValue) ? '' : 'none';
+    });
+}
 
