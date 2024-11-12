@@ -20,7 +20,7 @@ function validationform() {
 
     }
 
-    if (phnumber == "" || phnumber < 1) {
+    if (phnumber == "" || phnumber < 1 || phnumber.length < 10 || phnumber.length > 10) {
         alert("Enter valid phnumber");
         return false;
     }
@@ -467,6 +467,8 @@ function logout() {
 }
 
 
+
+
 function searchStudent() {
     const searchValue = document.querySelector('.inputcontent1').value;
     const rows = document.querySelectorAll('#datatable tbody tr');
@@ -484,4 +486,6 @@ function searcholdStudent() {
         row.style.display = name.includes(searchValue) ? '' : 'none';
     });
 }
+
+// new changes
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(0, 125, 254);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return validateForm()">
+            <input type="text" id="firstname" placeholder="First Name" required><br>
+            <input type="text" id="lastname" placeholder="Last Name" required><br>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+            <input type="submit" value="Sign Up" onclick="signin()">
+        </form>
+        <p class="error" id="errorMessage"></p>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Get form values
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            let errorMessage = "";
+
+            // Check if first name and last name are valid
+            if (!firstname || !lastname) {
+                errorMessage += "First name and last name are required.<br>";
+            }
+
+            // Check if email is valid
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                errorMessage += "Please enter a valid email.<br>";
+            }
+
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                errorMessage += "Passwords do not match.<br>";
+            }
+
+            // Check password length
+            if (password.length < 6) {
+                errorMessage += "Password must be at least 6 characters long.<br>";
+            }
+
+            // Show error message if there's any
+            if (errorMessage) {
+                document.getElementById('errorMessage').innerHTML = errorMessage;
+                return false;
+            }
+
+            return true; // If no errors, submit the form
+        }
+
+        function signin() {
+            if (validateForm()) {
+                window.location.assign("signin.html");
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -41,7 +41,7 @@
                 </div>
 
             </div>
-            <p>Not regestered?<span> Signup now</span></p>
+            <p>Not regestered?<span onclick="signup()"> Signup now</span></p>
         </div>
 
     </div>
@@ -57,6 +57,10 @@
                 alert("Provide correct information");
             }
 
+        }
+
+        function signup() {
+            window.location.assign("signup.html");
         }
     </script>
 
