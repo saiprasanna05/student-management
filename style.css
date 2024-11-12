@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+
+
+
+
+
+.container {
+    background-color: #ffffff;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+
+}
+
+.signin {
+    background-color: #ffffff;
+    width: 600px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.userinput {
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+.username input {
+    width: 350px;
+
+    padding: 10px;
+    border: 2px solid #333333;
+
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+    gap: 8px;
+}
+
+.password input {
+    width: 350px;
+    padding: 10px;
+
+    border: 2px solid #333333;
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+}
+
+.signinbtn button {
+    width: 350px;
+    border-radius: 6px;
+    background-color: rgb(0, 125, 254);
+    width: 350px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+
+}
+
+.imagedic img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    overflow: hidden;
+
+
+}
+
+span {
+    color: rgb(0, 125, 254);
+
+}
+
+span:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: rgb(0, 125, 254, 0.6);
+    cursor: pointer;
+
+}
