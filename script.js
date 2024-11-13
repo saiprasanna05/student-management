@@ -267,6 +267,7 @@ function showfirststandard() {
     currentclassContent.style.display = "block";
     addstudentContent.style.display = "none";
     document.querySelector(`#datatable tbody tr .mark2`).style.display = "none";
+    // document.querySelectorAll(".current ").innerHTML.style.backgroundColor = "black"
 
 
 }
@@ -482,8 +483,10 @@ function searcholdStudent() {
     const searchValue = document.querySelector('.inputcontent2').value;
     const rows = document.querySelectorAll('#deleteddatatable tbody tr');
     rows.forEach(row => {
-        const name = row.cells[3].innerText;
+        const name = row.cells[0].innerText + row.cells[1].innerText;
         row.style.display = name.includes(searchValue) ? '' : 'none';
+
+
     });
 }
 
